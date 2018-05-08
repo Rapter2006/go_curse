@@ -9,7 +9,7 @@ func part1() {
 	logger := log.New(os.Stdout, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
 
 	var repo *product.ItemsRepository
-	repo = ...
+	repo = ... // TODO создай объект репозитория
 	repo.Add(product.Item{
 		ID:          "1",
 		Name:        "Вальсакор таб. п/о 80мг №5",
