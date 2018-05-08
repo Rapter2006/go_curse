@@ -3,15 +3,13 @@ package main
 import (
 	"log"
 	"os"
-
-	"gitlab.2gis.ru/market/go-course/product"
 )
 
 func part1() {
 	logger := log.New(os.Stdout, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
 
 	var repo *product.ItemsRepository
-	repo = product.NewItemsRepository(logger)
+	repo = ...
 	repo.Add(product.Item{
 		ID:          "1",
 		Name:        "Вальсакор таб. п/о 80мг №5",
