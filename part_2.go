@@ -1,5 +1,11 @@
 package main
 
+import (
+	"gitlab.2gis.ru/i.yatsevich/go-course-1/nestedset"
+	"gitlab.2gis.ru/i.yatsevich/go-course-1/product"
+	"fmt"
+)
+
 func part2() {
 	categoryRoot := nestedset.NewNode(
 		product.Category{
