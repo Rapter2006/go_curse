@@ -7,6 +7,10 @@ type Item struct {
 	Description string
 }
 
+func (i Item) GetName() string {
+	return i.Name
+}
+
 // ItemID свой тип для идентификатора товаров,
 // чтобы его всегда можно было отличить от идентификатора другого типа объектов
 type ItemID string

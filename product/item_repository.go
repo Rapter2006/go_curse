@@ -2,7 +2,6 @@ package product
 
 import (
 	"errors"
-	"log"
 	"strings"
 	"sync"
 )
@@ -13,13 +12,17 @@ var ErrNotFound = errors.New("item not found")
 type ItemsRepository struct {
 	m      sync.RWMutex
 	items  map[ItemID]Item
-	logger log.Logger //... // TODO нужно как то указать тип компонента
+	logger CustomLogger //... // TODO нужно как то указать тип компонента
 }
 
-func NewRepository(log *log.Logger) ItemsRepository {
+type CustomLogger interface {
+	Printf(string, ...interface{})
+}
+
+func NewRepository(log CustomLogger) ItemsRepository {
 	return ItemsRepository{
 		items:  make(map[ItemID]Item, 0),
-		logger: *log,
+		logger: log,
 	}
 }
 
@@ -62,11 +65,14 @@ func (r *ItemsRepository) FindByText(text string) []Item {
 		if strings.Contains(strings.ToLower(item.Name), strings.ToLower(text)) {
 			r.logger.Printf(
 				"Товар '%s' совпал в названии при поиске по фразе '%s'",
-				item.ID,
+				item.Name,
 				text,
 			)
 			items = append(items, item)
 		}
+	}
+	if len(items) == 0 {
+		r.logger.Printf("Товар с текстом '%s' не найден", text)
 	}
 
 	return items

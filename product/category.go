@@ -6,6 +6,10 @@ type Category struct {
 	Items []*Item
 }
 
+func (c Category) GetName() string {
+	return c.Name
+}
+
 type CategoryID string
 
 func (c CategoryID) String() string {

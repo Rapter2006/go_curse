@@ -60,5 +60,5 @@ func part2() {
 }
 
 func findProducts(node nestedset.Node) []product.Item {
-	panic("Реализуй меня")
+	return node.Items()
 }
