@@ -30,9 +30,8 @@ func (r *ItemsRepository) Add(item Item) error {
 	r.m.Lock()
 	defer r.m.Unlock()
 	_, ok := r.items[item.ID]
-	// TODO для дебага полезно знать что была замена существующего товара
 	if ok {
-		r.logger.Printf("Заменяем уже существующий товар ID:%s - %q", item)
+		r.logger.Printf("Заменяем уже существующий товар ID:%s - %q", item, item.ID)
 	}
 	r.items[item.ID] = item
 	r.logger.Printf("Успешно добавили новый товар %q", item)

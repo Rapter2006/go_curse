@@ -1,7 +1,5 @@
 package product
 
-package product
-
 // Item товар описывается набором полей из структуры, и пкоа не имеет своего поведения из бизнес логики
 type Item struct {
 	ID          ItemID

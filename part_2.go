@@ -21,18 +21,18 @@ func part2() {
 			Name: "Товары",
 		},
 	))
-	//tires := goods.Add(nestedset.NewNode(
-	//	product.Category{
-	//		ID:   product.CategoryID("3"),
-	//		Name: "Шины",
-	//	},
-	//))
-	//tires.Add(nestedset.NewNode(
-	//	product.Item{
-	//		ID:   product.ItemID("100"),
-	//		Name: "Nokian Hakkapelitta-5 15 195X65",
-	//	},
-	//))
+	tires := goods.Add(nestedset.NewNode(
+		product.Category{
+			ID:   product.CategoryID("3"),
+			Name: "Шины",
+		},
+	))
+	tires.Add(nestedset.NewNode(
+		product.Item{
+			ID:   product.ItemID("100"),
+			Name: "Nokian Hakkapelitta-5 15 195X65",
+		},
+	))
 	goods.Add(nestedset.NewNode(
 		product.Category{
 			ID:   product.CategoryID("4"),
@@ -40,18 +40,18 @@ func part2() {
 		},
 	))
 
-	//services := categoryRoot.Add(nestedset.NewNode(
-	//	product.Category{
-	//		ID:   product.CategoryID("3"),
-	//		Name: "Услуги",
-	//	},
-	//))
-	//services.Add(nestedset.NewNode(
-	//	product.Item{
-	//		ID:   product.ItemID("1"),
-	//		Name: "Эпиляция зоны бикини",
-	//	},
-	//))
+	services := categoryRoot.Add(nestedset.NewNode(
+		product.Category{
+			ID:   product.CategoryID("3"),
+			Name: "Услуги",
+		},
+	))
+	services.Add(nestedset.NewNode(
+		product.Item{
+			ID:   product.ItemID("1"),
+			Name: "Эпиляция зоны бикини",
+		},
+	))
 
 	// Обойти дерево и выбрать только товары
 	fmt.Println("Выбираем все товары в нашем каталоге")

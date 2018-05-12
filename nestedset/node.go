@@ -1,6 +1,8 @@
 package nestedset
 
-import "gitlab.2gis.ru/i.yatsevich/go-course-1/product"
+import (
+	"gitlab.2gis.ru/i.yatsevich/go-course-1/product"
+)
 
 type Node struct {
 	category product.Category
@@ -9,7 +11,8 @@ type Node struct {
 }
 
 func (n *Node) Add(child *Node) *Node {
-	n.children = append(n.children, child)
+	n.children = append(n.children)
+
 	return n
 }
 
@@ -25,7 +28,8 @@ func (n *Node) ChildrenNodes() []*Node {
 	return n.children
 }
 
-func NewNode(c product.Category) *Node {
+func NewNode() *Node {
+
 	return &Node{
 		category: c,
 		children: make([]*Node, 0),
